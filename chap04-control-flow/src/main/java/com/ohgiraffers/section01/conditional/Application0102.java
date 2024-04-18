@@ -46,6 +46,7 @@ public class Application0102 {
 
     //한번에 연산식 입력받기
 
+
     public String call(){
 
         Scanner sc = new Scanner(System.in);
