@@ -8,6 +8,18 @@ public class OrderDTO {
 
     private int quantity;
 
+    private int totalPrice;
+
+
+
+    public OrderDTO(String menuName, int quantity,int price) {
+
+        this.menuName = menuName;
+        this.quantity = quantity;
+        this.price = price;
+        this.totalPrice = price * quantity;
+    }
+
     public String getMenuName() {
         return menuName;
     }
@@ -25,17 +37,25 @@ public class OrderDTO {
         return quantity;
     }
 
-    public void setQuantity(int quantity, int price) {
-        this.quantity = quantity;
-        this.price = quantity * price;
+    public void setQuantity() {
+
+    }
+
+    public int getTotalPrice() {
+        return totalPrice;
+    }
+
+    public void setTotalPrice(int totalPrice) {
+        this.totalPrice= totalPrice;
     }
 
     @Override
     public String toString() {
         return "주문내역{" +
                 "메뉴이름 = '" + menuName + '\'' +
-                ", 가격 = " + price +
                 ", 수량 = " + quantity +
+                ", 가격 = " + price +
+                ", 총가격 = " + totalPrice +
                 '}';
     }
 }

@@ -7,8 +7,7 @@ import com.ohgiraffers.order.service.OrderService;
 
 public class OrderController {
 
-    private OrderService orderService = new OrderService();
-    private OrderRepository orderRepository = new OrderRepository();
+    private final OrderService orderService = new OrderService();
 
 
     public String order(OrderDTO orderDTO){
@@ -35,9 +34,10 @@ public class OrderController {
         return "주문상세조회";
     }
 
-    public void orderRead(){
+    public String orderRead(){
 
        orderService.orderRead();
+       return orderService.orderRead();
 
 
     }
